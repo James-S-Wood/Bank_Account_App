@@ -63,15 +63,7 @@ class Bank
 
     public BankAccount FindAccount(string accountNumber)
     {
-        foreach (BankAccount account in accounts)
-        {
-            if (account.AccountNumber == accountNumber)
-            {
-                return account;
-            }
-        }
-
-        return null;
+        return accounts.FirstOrDefault(account => account.AccountNumber == accountNumber);
     }
 }
 
